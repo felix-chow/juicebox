@@ -5,8 +5,9 @@ const {
     getAllUsers,
     getUserById,
     createPost,
+    updatePost,
+    getPostsByTagName,
     getAllPosts,
-    getPostsByUser
 } = require('./index');
 
 async function dropTables() {
@@ -47,6 +48,17 @@ async function createTables() {
             title varchar(255) NOT NULL,
             content TEXT NOT NULL,
             active BOOLEAN DEFAULT true
+        );
+
+        CREATE TABLE tags (
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(255) UNIQUE NOT NULL
+        );
+
+        CREATE TABLE post_tags (
+            "postId" INTEGER REFERENCES posts(id),
+            "tagId" INTEGER REFERENCES tags(id),
+            UNIQUE("postId", "tagId")
         );
         `);
 
