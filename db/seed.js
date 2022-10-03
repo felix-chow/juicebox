@@ -44,7 +44,7 @@ async function createTables() {
 
         CREATE TABLE posts (
             id SERIAL PRIMARY KEY,
-            "authorId" INTEGER REFERENCES users(id) UNIQUE NOT NULL,
+            "authorId" INTEGER REFERENCES users(id) NOT NULL,
             title varchar(255) NOT NULL,
             content TEXT NOT NULL,
             active BOOLEAN DEFAULT true

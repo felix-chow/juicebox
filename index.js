@@ -21,9 +21,9 @@ server.use((req, res, next) => {
     next();
 })
 
-server.post("/api/users/register", () => {});
-server.post("/api/users/login", () => {});
-server.delete("/api/users/:id", () => {});
+server.post("/api/users/register", () => { });
+server.post("/api/users/login", () => { });
+server.delete("/api/users/:id", () => { });
 
 // app.use("/api", (req, res, next) => {
 //     console.log("A request was made to /api");
