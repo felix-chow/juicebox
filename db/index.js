@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 
 // supply the db name and location of the database
-const client = new Client('postgres://localhost:5432/juicebox-dev');
+const client = new Client(process.env.DATABASE_URL || 'postgres://localhost:5432/juicebox-dev');
 
 // User methods
 
